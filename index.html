@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Christian Colina - Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .info-section {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+      text-align: center;
+    }
+    .info-section h2 {
+      color: #e74c3c;
+      margin-bottom: 1.5rem;
+    }
+    .info-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .tab-btn {
+      padding: 0.5rem 1rem;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .tab-btn:hover,
+    .tab-btn.active {
+      background-color: #e74c3c;
+    }
+    .info-content {
+      text-align: left;
+    }
+    .info-block {
+      display: none;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    .info-block.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1 class="logo">Christian</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#info">Journey</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-image">
+        <img src="yachiru-eating.png" alt="Christian Colina">
+      </div>
+      <div class="hero-text">
+        <h2>Hi, I'm <span>Christian Adam Colina</span></h2>
+        <p>I'm a Web Developer and Programmer. I love playing video games as a hobby.</p>
+        <div class="buttons">
+          <a href="#contact" class="btn">Hire Me</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+ 
+  <section id="info" class="info-section">
+    <h2>My Journey</h2>
+    <div class="info-tabs">
+      <button onclick="showInfo('skills', event)" class="tab-btn active">Skills</button>
+      <button onclick="showInfo('experience', event)" class="tab-btn">Experience</button>
+      <button onclick="showInfo('education', event)" class="tab-btn">Education</button>
+    </div>
+
+    <div class="info-content">
+      <div id="skills" class="info-block active">
+        <ul>
+          <li>HTML, CSS, JavaScript</li>
+          <li>Laravel, PHP, MySQL</li>
+          <li>Java</li>
+        </ul>
+      </div>
+      <div id="experience" class="info-block">
+        <p>Freelance Web Developer (2023 - Present)</p>
+        <p>Developed personal and academic projects using HTML/CSS/JS and Laravel.</p>
+      </div>
+      <div id="education" class="info-block">
+        <p>Bachelor of Science in Information Technology in St. Cecelia's College(2022-present)</p>
+        <p>K-12 Education in Academia System Global Colleges</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-links">
+  <h2>Contact Me</h2>
+  <div class="contact-icons">
+    <a href="mailto:adamtourtosa@gmail.com" target="_blank" title="Email">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://www.facebook.com/adam.colina.9" target="_blank" title="Facebook">
+      <i class="fab fa-facebook"></i>
+    </a>
+    <a href="https://github.com/Pluh-Walk" target="_blank" title="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+</section>
+
+  </section>
+
+
+  <script>
+   
+
+
+    function showInfo(id, event) {
+      const tabs = document.querySelectorAll('.tab-btn');
+      const blocks = document.querySelectorAll('.info-block');
+
+      tabs.forEach(btn => btn.classList.remove('active'));
+      blocks.forEach(block => block.classList.remove('active'));
+
+      document.getElementById(id).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+
+</
