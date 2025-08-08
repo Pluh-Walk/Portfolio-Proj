@@ -41,6 +41,14 @@ nav a:hover {
   color: #e74c3c;
 }
 
+.page-section {
+  display: none;
+}
+
+.page-section.active {
+  display: block;
+}
+
 .hero {
   display: flex;
   align-items: center;
@@ -90,65 +98,14 @@ nav a:hover {
   background-color: #c0392b;
 }
 
-
-
-.contact-slider {
-  text-align: center;
+.info-section {
+  max-width: 800px;
   margin: 4rem auto;
-  max-width: 600px;
-  background-color: #1a1a1a;
   padding: 2rem;
+  background-color: #1a1a1a;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
-}
-
-.contact-slider h2 {
-  color: #e74c3c;
-  margin-bottom: 1.5rem;
-}
-
-.slider {
-  position: relative;
-  height: 120px;
-  overflow: hidden;
-}
-
-.slide {
-  display: none;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.slide.active {
-  display: block;
-}
-
-.slider-controls {
-  margin-top: 1rem;
-}
-
-.slider-controls button {
-  background-color: #e74c3c;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  font-size: 1.2rem;
-  margin: 0 0.5rem;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.slider-controls button:hover {
-  background-color: #c0392b;
-}
-
-.info-section {
-  background-color: #141414;
-  padding: 3rem 2rem;
   text-align: center;
-  border-radius: 10px;
-  margin: 4rem auto;
-  max-width: 800px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
 }
 
 .info-section h2 {
@@ -160,38 +117,51 @@ nav a:hover {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   flex-wrap: wrap;
 }
 
 .tab-btn {
-  padding: 0.5rem 1.2rem;
+  padding: 0.5rem 1rem;
+  background-color: #333;
+  color: #fff;
   border: none;
-  background-color: #e74c3c;
-  color: white;
-  font-weight: bold;
-  border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
 .tab-btn:hover,
 .tab-btn.active {
-  background-color: #c0392b;
+  background-color: #e74c3c;
 }
 
-.info-content .info-block {
+.info-content {
+  text-align: left;
+}
+
+.info-block {
   display: none;
-  animation: fadeIn 0.5s ease-in-out;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
-.info-content .info-block.active {
+.info-block.active {
   display: block;
 }
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+.contact-links {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.contact-links h2 {
+  color: #e74c3c;
+  margin-bottom: 1rem;
 }
 
 .contact-icons {
@@ -203,7 +173,7 @@ nav a:hover {
 
 .contact-icons a {
   color: #e74c3c;
-  font-size: 2.5rem; 
+  font-size: 2.5rem;
   transition: color 0.3s;
 }
 
@@ -211,12 +181,47 @@ nav a:hover {
   color: #c0392b;
 }
 
-.contact-links {
-  text-align: center;
-  padding: 3rem 0;
+
+
+.logo-img {
+  height: 40px;     
+  width: 40px;       
+  border-radius: 50%; 
+  object-fit: cover;  
+  border: 2px solid #e74c3c;
 }
 
-.contact-links h2 {
-  color: #e74c3c;
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background-color: #1a1a1a;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
   margin-bottom: 1rem;
+  border: 2px solid #e74c3c;
+}
+
+.project-card h3 {
+  color: #e74c3c;
+  margin-bottom: 0.5rem;
 }
